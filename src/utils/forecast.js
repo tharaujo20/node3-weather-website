@@ -10,6 +10,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error){
             callback('Error two', undefined)
         } else {
+            console.log(body.daily.data[0])
             const temp = body.current.temperature
             const feelsLike = body.current.feelslike
             callback(undefined, 'It is currently ' + temp + ' degrees out. It feels like ' + feelsLike + ' degrees out.')
